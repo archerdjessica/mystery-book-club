@@ -1,7 +1,13 @@
 # mystery-book-club
 
-Master Branch: pull the initial angular project and spring project, to work on your own
-test/master: push your modules here when they are completes
-test/{module}: create a new branch for each module
+# Khalid:
+/user/login-register, /admin/login
 
-ALWAYS add meaningful commit messages
+# Chris:
+/user/browse-add-books, /admin/add-edit-books-publishers
+
+# Sam:
+/user/read-write-reviews, /admin/read-approve-edit-delete-reviews
+
+# Jessica:
+/user/edit-info, /admin/edit-search-users
