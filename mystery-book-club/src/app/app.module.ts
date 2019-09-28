@@ -19,6 +19,30 @@ import { AdminReadReviewComponent } from './admin-read-review/admin-read-review.
 import { AdminApproveReviewComponent } from './admin-approve-review/admin-approve-review.component';
 import { AdminEditReviewComponent } from './admin-edit-review/admin-edit-review.component';
 import { AdminDeleteReviewComponent } from './admin-delete-review/admin-delete-review.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
+const routes: Routes = [
+  { path: 'login', component: UserLoginComponent },
+  { path: 'register', component: UserRegisterComponent },
+  { path: 'editinfo', component: UserEditInfoComponent },
+  { path: 'browsebooks', component: UserBrowseBooksComponent },
+  {
+    path: 'addbooktolist', component:
+      UserAddBookToListComponent
+  },
+  { path: 'readreview', component: UserReadReviewComponent },
+  { path: 'writereview', component: UserWriteReviewComponent },
+  { path: 'adminlogin', component: AdminLoginComponent },
+  { path: 'adminedituserinfo', component: AdminEditUserComponent },
+  { path: 'adminsearchusers', component: AdminSearchUsersComponent },
+  { path: 'adminaddbook', component: AdminAddBookComponent },
+  { path: 'adminaddpublisher', component: AdminAddPublisherComponent },
+  { path: 'adminreadreview', component: AdminReadReviewComponent },
+  { path: 'adminapprovereview', component: AdminApproveReviewComponent },
+  { path: 'admineditreview', component: AdminEditReviewComponent },
+  { path: 'admindeletereview', component: AdminDeleteReviewComponent },
+];
 
 @NgModule({
   declarations: [
@@ -42,7 +66,8 @@ import { AdminDeleteReviewComponent } from './admin-delete-review/admin-delete-r
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
