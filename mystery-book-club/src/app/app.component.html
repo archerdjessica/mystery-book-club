@@ -12,7 +12,7 @@
         <li><a routerLink="/editinfo">edit info</a></li>
         <li><a routerLink="/browsebooks">browse books</a></li>
         <li><a routerLink="/addbooktolist">add book to list</a></li>
-        <li><a routerLink="/readreview">readreview</a></li>
+        <li><a routerLink="/readreview">read review</a></li>
         <li><a routerLink="/writereview">write review</a></li>
         <li><a routerLink="/browsebooks">browse books</a></li>
       </ul>
@@ -34,8 +34,11 @@
       </ul>
     </div>
   </div>
-</div>
 
-<div>
-  <router-outlet></router-outlet>
+<div class="panel panel-primary">
+  <div class="panel-heading">Router Content</div>
+  <div class="panel-body">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 </div>
