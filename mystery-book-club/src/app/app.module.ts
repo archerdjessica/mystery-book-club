@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
@@ -19,6 +19,15 @@ import { AdminReadReviewComponent } from './admin-read-review/admin-read-review.
 import { AdminApproveReviewComponent } from './admin-approve-review/admin-approve-review.component';
 import { AdminEditReviewComponent } from './admin-edit-review/admin-edit-review.component';
 import { AdminDeleteReviewComponent } from './admin-delete-review/admin-delete-review.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+const routes: Routes = [
+  { path: 'review', component: UserReadReviewComponent },
+  { path: 'writeReview', component: UserWriteReviewComponent },
+  { path: 'editReview', component: AdminEditReviewComponent },
+  { path: 'deleteReview', component: AdminDeleteReviewComponent }
+]
 
 @NgModule({
   declarations: [
@@ -42,7 +51,10 @@ import { AdminDeleteReviewComponent } from './admin-delete-review/admin-delete-r
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    // AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
