@@ -6,6 +6,4 @@ export class Book {
     title: string;
     publisher: Publisher;
     authors: Author[];
-  	//{"authorID":1,"firstName":"","lastName":""},{"authorID":2,"firstName":"","lastName":""},{"authorID":3,"firstName":"","lastName":""}
-
 }
