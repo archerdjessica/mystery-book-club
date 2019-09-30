@@ -1,5 +1,5 @@
 export class Publisher {
     pubId: number;
-    pubName: string;
+    name: string;
     contact: number;
 }

@@ -1,12 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserLoginComponent } from './user-login/user-login.component';
-import { UserRegisterComponent } from './user-register/user-register.component';
-import { UserEditInfoComponent } from './user-edit-info/user-edit-info.component';
-import { UserBrowseBooksComponent } from './user-browse-books/user-browse-books.component';
 import { UserAddBookToListComponent } from './user-add-book-to-list/user-add-book-to-list.component';
 import { UserReadReviewComponent } from './user-read-review/user-read-review.component';
 import { UserWriteReviewComponent } from './user-write-review/user-write-review.component';
@@ -40,33 +36,19 @@ const routes: Routes = [
   { path: 'editReview', component: AdminEditReviewComponent },
   { path: 'deleteReview', component: AdminDeleteReviewComponent }
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
-    UserLoginComponent,
-    UserRegisterComponent,
-    UserEditInfoComponent,
-    UserBrowseBooksComponent,
-    UserAddBookToListComponent,
-    UserReadReviewComponent,
-    UserWriteReviewComponent,
-    AdminLoginComponent,
-    AdminEditUserComponent,
-    AdminSearchUsersComponent,
-    AdminAddBookComponent,
-    AdminAddPublisherComponent,
-    AdminReadReviewComponent,
-    AdminApproveReviewComponent,
-    AdminEditReviewComponent,
-    AdminDeleteReviewComponent
+    UserAddBookToListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule
     AppRoutingModule,
+    FormsModule
     RouterModule.forRoot(routes)
-
   ],
   providers: [],
   bootstrap: [AppComponent]
