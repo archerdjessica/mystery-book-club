@@ -23,12 +23,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
+  { path: 'login', component: UserLoginComponent },
+  { path: 'register', component: UserRegisterComponent },
+  { path: 'editInfo', component: UserEditInfoComponent },
+  { path: 'browseBooks', component: UserBrowseBooksComponent },
+  { path: 'addBookToList', component: UserAddBookToListComponent },
   { path: 'review', component: UserReadReviewComponent },
   { path: 'writeReview', component: UserWriteReviewComponent },
+  { path: 'adminlogin', component: AdminLoginComponent },
+  { path: 'adminedituserinfo', component: AdminEditUserComponent },
+  { path: 'adminsearchusers', component: AdminSearchUsersComponent },
+  { path: 'adminaddbook', component: AdminAddBookComponent },
+  { path: 'adminaddpublisher', component: AdminAddPublisherComponent },
+  { path: 'adminreadreview', component: AdminReadReviewComponent },
+  { path: 'adminapprovereview', component: AdminApproveReviewComponent },
   { path: 'editReview', component: AdminEditReviewComponent },
   { path: 'deleteReview', component: AdminDeleteReviewComponent }
-]
-
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,10 +62,11 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    // AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(routes),
     HttpClientModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
+
   ],
   providers: [],
   bootstrap: [AppComponent]
