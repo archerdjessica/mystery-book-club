@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Review {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long reviewId;
+	private int reviewId;
 	@ManyToOne
 	private Book book;
 	private String review;
@@ -27,11 +27,11 @@ public class Review {
 		// TODO Auto-generated constructor stub
 	}
 
-	public long getReviewId() {
+	public int getReviewId() {
 		return reviewId;
 	}
 
-	public void setReviewId(long reviewId) {
+	public void setReviewId(int reviewId) {
 		this.reviewId = reviewId;
 	}
 
