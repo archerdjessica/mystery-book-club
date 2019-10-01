@@ -1,1 +1,16 @@
-<p>user-read-review works!</p>
+<div>
+    <table border='1px'>
+        <tr>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Reivew</th>
+        </tr>
+        <tr><!-- *ngFor="let review of reviews">-->
+            <td>{{review.book.title}}</td>
+            <td *ngFor="let author of review.book.authors">{{author.firstName}} {{author.lastName}} </td>
+            <td>{{review.book.publisher.pubName}}</td>
+            <td>{{review.reviewBody}}</td>
+        </tr>
+    </table>
+</div>
