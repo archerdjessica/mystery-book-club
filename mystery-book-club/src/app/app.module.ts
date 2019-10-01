@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
@@ -19,7 +19,27 @@ import { AdminReadReviewComponent } from './admin-read-review/admin-read-review.
 import { AdminApproveReviewComponent } from './admin-approve-review/admin-approve-review.component';
 import { AdminEditReviewComponent } from './admin-edit-review/admin-edit-review.component';
 import { AdminDeleteReviewComponent } from './admin-delete-review/admin-delete-review.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+const routes: Routes = [
+  { path: 'login', component: UserLoginComponent },
+  { path: 'register', component: UserRegisterComponent },
+  { path: 'editInfo', component: UserEditInfoComponent },
+  { path: 'browseBooks', component: UserBrowseBooksComponent },
+  { path: 'addBookToList', component: UserAddBookToListComponent },
+  { path: 'review', component: UserReadReviewComponent },
+  { path: 'writeReview', component: UserWriteReviewComponent },
+  { path: 'adminlogin', component: AdminLoginComponent },
+  { path: 'adminedituserinfo', component: AdminEditUserComponent },
+  { path: 'adminsearchusers', component: AdminSearchUsersComponent },
+  { path: 'adminaddbook', component: AdminAddBookComponent },
+  { path: 'adminaddpublisher', component: AdminAddPublisherComponent },
+  { path: 'adminreadreview', component: AdminReadReviewComponent },
+  { path: 'adminapprovereview', component: AdminApproveReviewComponent },
+  { path: 'editReview', component: AdminEditReviewComponent },
+  { path: 'deleteReview', component: AdminDeleteReviewComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +62,11 @@ import { AdminDeleteReviewComponent } from './admin-delete-review/admin-delete-r
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    HttpClientModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

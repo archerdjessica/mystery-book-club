@@ -1,1 +1,7 @@
-<p>user-write-review works!</p>
+<div>
+    <form (ngSubmit)="saveReview()" #reviewForm="ngForm">
+        <textarea rows="3" cols="25" [(ngModel)]="review.reviewBody" name="review">
+        </textarea><br />
+        <input type="submit" value="Submit" />
+    </form>
+</div>

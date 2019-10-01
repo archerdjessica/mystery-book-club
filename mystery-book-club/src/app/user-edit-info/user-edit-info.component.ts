@@ -7,9 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserEditInfoComponent implements OnInit {
 
-  constructor() { }
+  dummyUser:User;
 
-  ngOnInit() {
+  constructor() { 
+
   }
 
+  ngOnInit() {
+    this.dummyUser={
+      id:1,
+      name:'dummy',
+      email:'user@dummy.com',
+      password:'badpassword',
+      birthday:'January 1',
+      readingList:['book 1', 'book 2']
+    }
+  }
+
+}
+
+export class User{
+  id:number;
+  name:string;
+  email:string;
+  password:string;
+  birthday:string;
+  readingList:string[];
 }
