@@ -19,5 +19,9 @@ export class AdminEditUserComponent implements OnInit {
     
   }
 
+  public updateUser(user:User):void{
+    console.log("user update: "+user);
+  }
+
 
 }

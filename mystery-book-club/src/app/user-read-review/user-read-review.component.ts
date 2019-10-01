@@ -42,7 +42,7 @@ export class UserReadReviewComponent implements OnInit {
     this.book.publisher = this.publisher;
     this.user.id = 1001;
     this.user.email = "sybarra2076@gmail.com";
-    this.user.birthday = new Date('January 10, 1987');
+    // this.user.birthday = new Date('January 10, 1987');
     this.user.name = "Samuel Ybarra";
     this.user.password = "password";
     this.user.readingList = [this.book];
