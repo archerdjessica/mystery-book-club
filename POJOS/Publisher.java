@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Publisher {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long pubId;
+	private int pubId;
 	private String name;
 	private Long contact;
 	
@@ -19,11 +19,11 @@ public class Publisher {
 		// TODO Auto-generated constructor stub
 	}
 
-	public long getPubId() {
+	public int getPubId() {
 		return pubId;
 	}
 
-	public void setPubId(long pubId) {
+	public void setPubId(int pubId) {
 		this.pubId = pubId;
 	}
 
