@@ -1,1 +1,21 @@
-<p>admin-search-users works!</p>
+<div>
+    <table>
+        <tr>
+            <th>User Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Birthday</th>
+            <th>reading list</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.birthday}}</td>
+            <td>{{user.readingList}}</td>
+            <td><button (click)="editUser(user)">Edit user {{user.id}}</button></td>
+        </tr>
+    </table>
+
+    
+</div>
