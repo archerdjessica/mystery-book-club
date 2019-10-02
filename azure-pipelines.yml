@@ -29,3 +29,12 @@ steps:
     npm audit fix
     ng build --prod
   displayName: 'npm install and build'
+- task: S3Upload@1
+  inputs:
+    awsCredentials: 'AWS'
+    regionName: 'us-east-2'
+    bucketName: 'mysterybookclub-revature'
+    sourceFolder: '/'
+    globExpressions: '**'
+    filesAcl: 'bucket-owner-full-control'
+    createBucket: true
