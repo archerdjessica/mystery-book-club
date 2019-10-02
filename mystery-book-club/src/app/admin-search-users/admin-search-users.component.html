@@ -1,21 +1,35 @@
 <div>
-    <table>
-        <tr>
-            <th>User Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Birthday</th>
-            <th>reading list</th>
-        </tr>
-        <tr *ngFor="let user of users">
-            <td>{{user.id}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.birthday}}</td>
-            <td>{{user.readingList}}</td>
-            <td><button (click)="editUser(user)">Edit user {{user.id}}</button></td>
-        </tr>
-    </table>
+    <h2>Search users</h2>
+    <div id="searchOptions">
+        <button (click)="clear()">Clear Search</button>
+        <button (click)="showAll()")>Show all</button>
+        <ul>
+            <li>get all</li>
+            <li>search by name</li>
+            <li>search by email</li>
+            <li>?</li>
+        </ul>
+    </div>
 
-    
+    <div ng-style="myStyle">
+        <h3>search results</h3>
+        <table>
+            <tr>
+                <th>User Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>reading list</th>
+            </tr>
+            <tr *ngFor="let user of result">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.birthday}}</td>
+                <td>{{user.readingList}}</td>
+                <td><button (click)="editUser(user)">Edit user {{user.id}}</button></td>
+            </tr>
+        </table>
+    </div>
+
 </div>
