@@ -5,6 +5,9 @@
 
 trigger:
 - deploy/aws/1
+- task: CmdLine@2
+  inputs:
+    script: 'cd mystery-book-club'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -16,7 +19,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd mystery-book-club
     npm install -g @angular/cli
     npm install
     ng build --prod
