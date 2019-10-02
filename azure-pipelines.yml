@@ -16,7 +16,11 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    npm install
     npm install node-lambda -g
+  displayName: 'npm install'
+
+- script: |
     cd mystery-book-club
     npm install -g @angular/compiler-cli
     npm install -g @angular/cli
