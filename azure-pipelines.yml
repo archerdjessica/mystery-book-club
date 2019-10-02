@@ -17,8 +17,9 @@ steps:
 
 - script: |
     npm install -g @angular/cli
-    npm install -g @angular-devkit/build-angular
+    npm install @angular-devkit/build-angular
     npm install
+    npm audit fix
     cd mystery-book-club
     ng build --prod
   displayName: 'npm install and build'
