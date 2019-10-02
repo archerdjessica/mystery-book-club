@@ -1,0 +1,31 @@
+# Node.js with Angular
+# Build a Node.js project that uses Angular.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- deploy/aws/1
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install node-lambda -g
+    cd mystery-book-club
+    npm install -g @angular/compiler-cli
+    npm install -g @angular/cli
+    npm install @angular-devkit/build-angular
+    npm install
+    npm audit fix
+    ng build --prod
+  displayName: 'npm install and build'
+
+- script: |
+    node-lambda deploy -a $(AWS_ACCESS_KEY) -s $(AWS_SECRET_KEY) -o $(AWS_ROLE) -r $(AWS_REGION) -n $(AWS_LAMBDA_FUNCTION_NAME) --excludeGlobs "azure-pipelines.yml"
+  displayName: 'Deploy to AWS'
