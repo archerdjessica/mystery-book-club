@@ -30,6 +30,11 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
-- script: |
-    node-lambda deploy -a $(AWS_ACCESS_KEY) -s $(AWS_SECRET_KEY) -o $(AWS_ROLE) -r $(AWS_REGION) -n $(AWS_LAMBDA_FUNCTION_NAME) --excludeGlobs "azure-pipelines.yml"
-  displayName: 'Deploy to AWS'
+  - task: BeanstalkDeployApplication@1
+    inputs:
+      awsCredentials: 'AWS'
+      regionName: 'us-east-2'
+      applicationName: 'mbcTest'
+      environmentName: 'Mbctest-env-1'
+      applicationType: 's3'
+      deploymentBundleBucket: 'elasticbeanstalk-us-east-2-339348439082'
