@@ -1,6 +1,5 @@
-export class Publisher{
-    pubId:number;
-	name:string;
-	contact:number;
-	
+export class Publisher {
+    pubId: number;
+    pubName: string;
+    contact: number;
 }

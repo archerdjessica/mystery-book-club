@@ -1,6 +1,5 @@
 package com.model;
 
-import java.awt.print.Book;
 import java.util.Date;
 import java.util.List;
 
@@ -9,11 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
+@Table(name = "Account")
 @Entity
-@Table
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -23,8 +22,9 @@ public class User {
 	private String password;
 	private String name;
 	private Date birthday;
+	@OneToMany
 	private List<Book> readingList;
-	
+
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
@@ -76,5 +76,5 @@ public class User {
 	public void setReadingList(List<Book> readingList) {
 		this.readingList = readingList;
 	}
-	
+
 }
