@@ -23,9 +23,9 @@ export class UserWriteReviewComponent implements OnInit {
   }
 
   saveReview(user: User, book: Book) {
-    // this.review.dateWritten = new Date();
-    // this.review.book = book;
-    // this.review.user = user;
+    this.review.dateWritten = new Date();
+    this.review.book = book;
+    this.review.user = user;
     // console.log(this.review.reviewBody);
     this.reviewService.saveReview(this.review).subscribe(data => this.review);
     this.goToReviewList();
