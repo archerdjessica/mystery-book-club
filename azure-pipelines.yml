@@ -5,9 +5,6 @@
 
 trigger:
 - deploy/aws/1
-- task: CmdLine@2
-  inputs:
-    script: 'cd mystery-book-club'
 
 pool:
   vmImage: 'ubuntu-latest'
