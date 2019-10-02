@@ -18,5 +18,6 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
+    cd mystery-book-club
     ng build --prod
   displayName: 'npm install and build'
