@@ -13,25 +13,25 @@ import { BookReviewService } from '../book-review.service';
 })
 export class UserReadReviewComponent implements OnInit {
 
-  // user: User;
-  // book: Book;
-  // review: Review;
-  // author: Author;
-  // publisher: Publisher;
+  user: User;
+  book: Book;
+  review: Review;
+  author: Author;
+  publisher: Publisher;
   reviews:Review[];
   constructor(private reviewService:BookReviewService) {
-    // this.user = new User();
-    // this.author = new Author();
-    // this.publisher = new Publisher();
-    // this.book = new Book();
-    // this.review = new Review();
+    this.user = new User();
+    this.author = new Author();
+    this.publisher = new Publisher();
+    this.book = new Book();
+    this.review = new Review();
   }
 
   ngOnInit() {
     this.reviewService.readReviews().subscribe(data=>{
       this.reviews = data;
     })
-    this.author.authorID = 101;
+    this.author.authorId = 101;
     this.author.firstName = "John";
     this.author.lastName = "Smith";
     this.publisher.contact = 1234567890;
