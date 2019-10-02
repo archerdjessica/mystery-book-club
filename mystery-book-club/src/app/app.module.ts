@@ -65,7 +65,7 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
 
   ],
   providers: [],
