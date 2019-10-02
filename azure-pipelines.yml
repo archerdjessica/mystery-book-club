@@ -29,12 +29,3 @@ steps:
     npm audit fix
     ng build --prod
   displayName: 'npm install and build'
-
-- task: BeanstalkDeployApplication@1
-    inputs:
-    awsCredentials: 'AWS'
-    regionName: 'us-east-2'
-    applicationName: 'mbcTest'
-    environmentName: 'Mbctest-env-1'
-    applicationType: 's3'
-    deploymentBundleBucket: 'elasticbeanstalk-us-east-2-339348439082'
