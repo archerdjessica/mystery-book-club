@@ -24,3 +24,6 @@ steps:
     npm audit fix
     ng build --prod
   displayName: 'npm install and build'
+
+- name: AWS S3 Sync
+  uses: opspresso/action-s3-sync@v0.2.1
