@@ -75,8 +75,12 @@
         <div class="modal-body bg bg-light">
           Please enter accurate information: 
           <form action="registration" method="post" id="form2" role="form">  
-              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="e-mail"></br>
-              <input type="text" name="fullName" class="form-control" id="fullName" aria-describedby="fnameHelp" placeholder="Full Name">
+           
+            <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="e-mail"></br>
+            <div class="form-group" [class.has-error]="fullNameControl.invalid && fullNameControl.touched">  
+              <input type="text" name="fullName" class="form-control" required id="fullName" aria-describedby="fnameHelp" placeholder="Full Name" [(ngModel)]="fullName" #fullNameControl="ngModel">
+              <span class="help-block" *ngIf="fullNameControl.invalid && fullNameControl.touched">Full Name Please</span>
+            </div>
               <input type="password" name="password" class="form-control" id="passWord" aria-describedby="passHelp" placeholder="Create password"></br>
               <input type="password" name="cpassword" class="form-control" id="confPassWord" aria-describedby="cpassHelp" placeholder="Confirm password"></br>
               <input type="Date" name="dob" class="form-control datepicker" id="date" aria-describedby="dateHelp" placeholder="Date of Birth"></br>
