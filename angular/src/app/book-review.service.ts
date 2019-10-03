@@ -12,10 +12,10 @@ export class BookReviewService {
   private editURL: string;
   private deleteURL: string;
   constructor(private http: HttpClient) {
-    this.readURL = "";
-    this.writeURL = "";
-    this.editURL = "";
-    this.deleteURL = "";
+    this.readURL = "http://localhost:4000/reviews";
+    this.writeURL = "http://localhost:4000/writeReview";
+    this.editURL = "http://localhost:4000/editReview";
+    this.deleteURL = "http://localhost:4000/deleteReview/";
   }
 
   public saveReview(review: Review) {
