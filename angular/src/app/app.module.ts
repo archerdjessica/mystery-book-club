@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
-// import { UserEditInfoComponent } from './user-edit-info/user-edit-info.component';
+//import { UserEditInfoComponent } from './user-edit-info/user-edit-info.component';
 import { UserBrowseBooksComponent } from './user-browse-books/user-browse-books.component';
 import { UserAddBookToListComponent } from './user-add-book-to-list/user-add-book-to-list.component';
 import { UserReadReviewComponent } from './user-read-review/user-read-review.component';
