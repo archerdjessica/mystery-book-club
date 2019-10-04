@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>{{title}}</h1>
+    <h2></h2>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">User Modules</div>
+    <div class="panel-body">
+      <ul id="menu">
+        <li>logout</li>
+        <li><a routerLink="/login"> Login</a></li>
+        <li><a routerLink="/register">register</a></li>
+        <li><a routerLink="/editinfo">edit info</a></li>
+        <li><a routerLink="/browsebooks">browse books</a></li>
+        <li><a routerLink="/addbooktolist">add book to list</a></li>
+        <li><a routerLink="/review">Sample Book Review</a></li>
+        <li><a routerLink="/writeReview">Create Review</a></li>
+        <li><a routerLink="/browsebooks">browse books</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Admiin Modules</div>
+    <div class="panel-body">
+      <ul id="menu">
+        <li><a routerLink="/adminlogin"> Login</a></li>
+        <li><a routerLink="/adminedituserinfo">edit user info</a></li>
+        <li><a routerLink="/adminsearchusers">search users</a></li>
+        <li><a routerLink="/adminaddbook">add book to database</a></li>
+        <li><a routerLink="/adminaddpublisher">add publisher</a></li>
+        <li><a routerLink="/adminreadreview">read review </a></li>
+        <li><a routerLink="/adminapprovereview">approve reviews</a></li>        
+    <li><a routerLink="/editReview">Edit Review</a></li>
+    <li><a routerLink="/deleteReview">Delete Review</a></li>
+  </ul>
+</div>        
+  <div class="panel panel-primary">
+    <div class="panel-heading">Router Content</div>
+    <div class="panel-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
