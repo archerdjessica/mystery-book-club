@@ -1,25 +1,15 @@
-import { Component } from '@angular/core';
-import { Review } from '../review';
-import { BookReviewService } from '../book-review.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-admin-edit-review',
   templateUrl: './admin-edit-review.component.html',
   styleUrls: ['./admin-edit-review.component.css']
 })
-export class AdminEditReviewComponent {
+export class AdminEditReviewComponent implements OnInit {
 
-  review: Review;
-  constructor(private reviewService: BookReviewService, private router: Router) {
-    this.review = new Review();
+  constructor() { }
+
+  ngOnInit() {
   }
 
-  updateReview() {
-    this.reviewService.editReview(this.review).subscribe(data => this.goToReviewList())
-  }
-
-  goToReviewList() {
-    this.router.navigate(['/review']);
-  }
 }

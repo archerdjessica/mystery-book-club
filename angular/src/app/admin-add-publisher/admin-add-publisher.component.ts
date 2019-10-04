@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Publisher} from '../publisher'; 
 
 @Component({
   selector: 'app-admin-add-publisher',
@@ -7,10 +6,9 @@ import {Publisher} from '../publisher';
   styleUrls: ['./admin-add-publisher.component.css']
 })
 export class AdminAddPublisherComponent implements OnInit {
-  publisher: Publisher;
-  constructor() { 
-    this.publisher = new Publisher();
-  }
+
+  constructor() { }
+
   ngOnInit() {
   }
 
