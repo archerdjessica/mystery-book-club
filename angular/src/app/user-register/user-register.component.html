@@ -1,110 +1,26 @@
 <div>
-  <!-- <div class="container"> -->
-  <!-- <div class="row"> -->
-  <div class="col-sm-3" style="background-color:#ffb366;">
-    <!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"> -->
-    Log In
-    <!-- </button> -->
-    <!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal1"> -->
-    Register
-    <!-- </button></br></br> -->
-
-
-    <!-- The Modal -->
-    <div class="modal fade" id="myModal">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Enter credentials:</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <div class="container" id="registration">
+      <h1>Registration</h1>
+      <form>
+          <div class="form-group">
+              <label for="useerEmail">Enter Email</label>
+              <input type="text" class="form-control" id="email" placeholder="{{dummyUser.email}}">
           </div>
-          <!-- Modal body -->
-          <!--form action="something.html" method="post" id="form" role="form"-->
-          <form action="login" method="post" onsubmit="return isValidUser()">
-            <div class="modal-body">
-              Please enter:
-              <!-- <form >ser name</form>-->
-              <input type="email" name="email" class="form-control" id="userEntry" aria-describedby="nameHelp"
-                placeholder="Enter email" /><br />
-
-
-              <!-- <form>Password</form>-->
-              <input type="password" name="password" class="form-control" id="passEntry" aria-describedby="passHelp"
-                placeholder="Password" /><br />
-
-              <button type="submit" class="btn btn-info" id="logSubmit">Submit</button><br />
-              <!--a href="passWordReset.html">Forgot Username/Password?</a-->
-            </div>
-          </form>
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+          <div class="form-group">
+            <label for="fullName">Enter full name</label>
+            <input type="text" class="form-control" id="fullName" placeholder="{{dummyUser.fullName}}">
         </div>
+        <div class="form-group">
+          <label for="useerEmail">Enter Email</label>
+          <input type="text" class="form-control" id="email" placeholder="{{dummyUser.email}}">
       </div>
-    </div>
 
-
-    <!-- The Modal -->
-    <div class="modal fade" id="myModal1">
-      <div class="modal-dialog modal-md">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header bg bg-warning">
-            <h4 class="modal-title">Enter your information:</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <div class="form-group">
+              <label for="birthDate">Enter Birthdate</label>
+              <input type="Date" class="form-control" id="dob" placeholder="{{dummyUser.dob}}">
           </div>
 
-          <!-- Modal body -->
-          <div class="modal-body bg bg-light">
-            Please enter accurate information:
-            <form action="registration" method="post" id="form2" role="form">
+          <button type="submit" class="btn btn-success">Submit</button>
 
-              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
-                placeholder="e-mail" /><br />
-              <!-- <div class="form-group" [class.has-error]="fullNameControl.invalid && fullNameControl.touched"> -->
-                <!-- <input type="text" name="fullName" class="form-control" required id="fullName" aria-describedby="fnameHelp" placeholder="Full Name" [(ngModel)]="fullName" #fullNameControl="ngModel" /> -->
-                <span class="help-block" *ngIf="fullNameControl.invalid && fullNameControl.touched">Full Name
-                  Please</span>
-              <!-- </div> -->
-              <input type="password" name="password" class="form-control" id="passWord" aria-describedby="passHelp"
-                placeholder="Create password" /><br />
-              <input type="password" name="cpassword" class="form-control" id="confPassWord"
-                aria-describedby="cpassHelp" placeholder="Confirm password" /><br/>
-              <input type="Date" name="dob" class="form-control datepicker" id="date" aria-describedby="dateHelp"
-                placeholder="Date of Birth"/><br/>
-              <!-- <button type="submit" class="btn btn-info" id="regSubmit">Submit</button></br> -->
-          <!-- </div> -->
-          </form>
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btnc btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
+      </form>
   </div>
-  <!-- <div class="col-sm-9" style="background-image: url(./img/pysa.jpg);"> -->
-  <!--img img src="pysa.jpg" class="img-thumbnail" alt="bank"-->
-  <!--h1>Example headline.</h1>
-      <div class="top-left" style="color:white">If you really need money, come to us. We have money</div-->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- <script src="./js/bootstrap-validate.js"></script> -->
-  <!-- <script src="./js/login.js"></script> -->
-
-  <script>
-  bootstrapValidate('#email', 'email:Correct e-mail format only')
-  bootstrapValidate('#fullName', 'alpha:Please alphabet characters only')
-  bootstrapValidate('#passWord', 'alphanumeric:Please use characters and numbers only')
-  bootstrapValidate('#confPassWord', 'matches:#passWord:Password should match')
-  bootstrapValidate('#date', 'date:Please numbers entry only')
-  </script>
-  <script type="text/javascript" src="scripts/login.js"></script>
-
-</div>

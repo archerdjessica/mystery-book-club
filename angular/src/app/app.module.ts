@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { UserLoginComponent } from './user-login/user-login.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { UserEditInfoComponent } from './user-edit-info/user-edit-info.component';
 import { UserBrowseBooksComponent } from './user-browse-books/user-browse-books.component';
@@ -47,7 +47,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    // UserLoginComponent,
+    //UserLoginComponent,
     UserRegisterComponent,
     UserEditInfoComponent,
     UserBrowseBooksComponent,
