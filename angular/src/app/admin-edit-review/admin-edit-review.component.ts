@@ -16,7 +16,8 @@ export class AdminEditReviewComponent {
   }
 
   updateReview() {
-    this.reviewService.editReview(this.review).subscribe(data => this.goToReviewList())
+    console.log(this.review.reviewBody);
+    //this.reviewService.editReview(this.review).subscribe(data => this.goToReviewList())
   }
 
   goToReviewList() {

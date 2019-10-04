@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
-// import { UserEditInfoComponent } from './user-edit-info/user-edit-info.component';
+import { UserEditInfoComponent } from './user-edit-info/user-edit-info.component';
 import { UserBrowseBooksComponent } from './user-browse-books/user-browse-books.component';
 import { UserAddBookToListComponent } from './user-add-book-to-list/user-add-book-to-list.component';
 import { UserReadReviewComponent } from './user-read-review/user-read-review.component';
@@ -25,7 +25,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
   { path: 'login', component: UserLoginComponent },
   { path: 'register', component: UserRegisterComponent },
-  // { path: 'editInfo', component: UserEditInfoComponent },
+  { path: 'editInfo', component: UserEditInfoComponent },
   { path: 'browseBooks', component: UserBrowseBooksComponent },
   { path: 'addBookToList', component: UserAddBookToListComponent },
   { path: 'review', component: UserReadReviewComponent },
@@ -45,7 +45,7 @@ const routes: Routes = [
     AppComponent,
     UserLoginComponent,
     UserRegisterComponent,
-    // UserEditInfoComponent,
+    UserEditInfoComponent,
     UserBrowseBooksComponent,
     UserAddBookToListComponent,
     UserReadReviewComponent,
@@ -63,9 +63,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
     AppRoutingModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes)
 
   ],
   providers: [],
