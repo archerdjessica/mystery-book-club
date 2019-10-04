@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
 
 @Component({
   selector: 'app-admin-edit-user',
@@ -8,20 +7,9 @@ import { User } from '../user';
 })
 export class AdminEditUserComponent implements OnInit {
 
-  user:User;
-
-  constructor() {
-    this.user={"id":0, "name":"Sam", "email":"SamIsGreat@email.com", "birthday":"Dec31 1989", "readingList":[], "password":"pw"};
-    console.log("editing user: "+this.user)
-   }
+  constructor() { }
 
   ngOnInit() {
-    
   }
-
-  public updateUser(user:User):void{
-    console.log("user update: "+user);
-  }
-
 
 }

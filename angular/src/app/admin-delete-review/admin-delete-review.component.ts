@@ -11,13 +11,17 @@ import { Review } from '../review';
 export class AdminDeleteReviewComponent {
 
   review: Review;
-  constructor(private reviewService: BookReviewService, private router: Router) {
+  constructor(private router: Router) {//private reviewService: BookReviewService, private router: Router) {
     this.review = new Review();
+    this.review.reviewBody = "Test";
+    this.review.reviewId = 10;
   }
 
   deleteReview() {
-    this.reviewService.deleteAnimal(this.review.reviewId).subscribe(data => {
-    })
+    //this.reviewService.deleteAnimal(this.review.reviewId).subscribe(data => {
+    console.log(this.review.reviewId);
+    console.log("review deleted");
+    //})
   }
 
   goToReviewList() {
