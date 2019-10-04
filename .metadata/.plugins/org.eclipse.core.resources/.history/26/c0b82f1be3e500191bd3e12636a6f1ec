@@ -1,0 +1,5 @@
+package com.mystery.service;
+
+public interface AdminService {
+
+}

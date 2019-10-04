@@ -1,3 +1,6 @@
+
+
+
 import { Book } from './book';
 
 
@@ -10,3 +13,4 @@ export class User {
     birthday: string;
     readingList: Book[];
 }
+

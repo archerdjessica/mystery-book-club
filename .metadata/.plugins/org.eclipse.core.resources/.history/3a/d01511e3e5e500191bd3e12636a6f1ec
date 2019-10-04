@@ -1,0 +1,5 @@
+package com.mystery.service.impl;
+
+public class PublisherServiceImpl {
+
+}

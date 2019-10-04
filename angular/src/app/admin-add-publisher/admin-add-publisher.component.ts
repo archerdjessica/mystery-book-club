@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Publisher} from '../publisher'; 
+import {PublisherService} from '../publisher.service'
 
 @Component({
   selector: 'app-admin-add-publisher',
@@ -8,10 +9,14 @@ import {Publisher} from '../publisher';
 })
 export class AdminAddPublisherComponent implements OnInit {
   publisher: Publisher;
-  constructor() { 
+  constructor(private  publisherservice:PublisherService ) { 
     this.publisher = new Publisher();
   }
   ngOnInit() {
+  }
+  createPublisher(){
+    this.publisherservice.createPublisher(this.publisher);
+
   }
 
 }
