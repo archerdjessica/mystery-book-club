@@ -1,30 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import {GetBooksService} from '../getbooks.service';
 import {Router} from '@angular/router';
-import {Review} from '../review';
 import { runInThisContext } from 'vm';
-=======
 import { User } from '../user';
 import { Review } from '../review';
 import { Book } from '../book';
 import { Author } from '../author';
 import { Publisher } from '../publisher';
-import { BookReviewService } from '../book-review.service';
-
->>>>>>> 1341f6b55a72020bf75ebf1833e05992f931bb34
+import { BookReviewService } from '../book-review.service'
 @Component({
   selector: 'app-user-read-review',
   templateUrl: './user-read-review.component.html',
   styleUrls: ['./user-read-review.component.css']
 })
 export class UserReadReviewComponent implements OnInit {
-<<<<<<< HEAD
+
    review:Review[];
    bookId:number;
-  constructor(private GetBooksService,  private router: Router) { }
-=======
-
+ 
   // user: User;
   // book: Book;
   // review: Review;
@@ -38,13 +31,13 @@ export class UserReadReviewComponent implements OnInit {
     // this.book = new Book();
     // this.review = new Review();
   }
->>>>>>> 1341f6b55a72020bf75ebf1833e05992f931bb34
+
 
   ngOnInit() {
     this.reviewService.readReviews().subscribe(data=>{
       this.reviews = data;
     })
-    this.author.authorID = 101;
+    this.author.authorId = 101;
     this.author.firstName = "John";
     this.author.lastName = "Smith";
     this.publisher.contact = 1234567890;
