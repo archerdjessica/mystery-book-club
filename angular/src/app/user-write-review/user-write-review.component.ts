@@ -24,7 +24,7 @@ export class UserWriteReviewComponent {
     this.review.user = user;
     console.log(this.review.reviewBody);
     this.goToReviewList();
-    //this.reviewService.saveReview(this.review).subscribe(data => this.review);
+    this.reviewService.saveReview(this.review).subscribe(data => this.review);
   }
 
   goToReviewList() {
