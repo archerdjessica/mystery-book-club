@@ -23,4 +23,5 @@ export class AdminDeleteReviewComponent {
   goToReviewList() {
     this.router.navigate(['/review']);
   }
+
 }

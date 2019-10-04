@@ -8,30 +8,21 @@ import { Book } from '../book';
 import { Author } from '../author';
 import { Publisher } from '../publisher';
 import { BookReviewService } from '../book-review.service'
+
 @Component({
   selector: 'app-user-read-review',
   templateUrl: './user-read-review.component.html',
   styleUrls: ['./user-read-review.component.css']
 })
 export class UserReadReviewComponent implements OnInit {
-
-<<<<<<< HEAD:mystery-book-club/src/app/user-read-review/user-read-review.component.ts
-   review:Review[];
-   bookId:number;
- 
-  // user: User;
-  // book: Book;
-  // review: Review;
-  // author: Author;
-  // publisher: Publisher;
-=======
+ //  bookId:number;
   user: User;
   book: Book;
   review: Review;
   author: Author;
   publisher: Publisher;
->>>>>>> test/master:angular/src/app/user-read-review/user-read-review.component.ts
   reviews:Review[];
+  
   constructor(private reviewService:BookReviewService) {
     this.user = new User();
     this.author = new Author();

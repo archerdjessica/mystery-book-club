@@ -16,7 +16,6 @@ export class AdminAddPublisherComponent implements OnInit {
   }
   createPublisher(){
     this.publisherservice.createPublisher(this.publisher);
-
   }
 
 }
