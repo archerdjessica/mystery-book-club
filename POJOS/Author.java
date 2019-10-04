@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long authorID;
+	private int authorId;
 	private String firstName;
 	private String lastName;
 	
@@ -19,12 +19,12 @@ public class Author {
 		// TODO Auto-generated constructor stub
 	}
 
-	public long getAuthorID() {
-		return authorID;
+	public int getAuthorID() {
+		return authorId;
 	}
 
-	public void setAuthorID(long authorID) {
-		this.authorID = authorID;
+	public void setAuthorID(int authorID) {
+		this.authorId = authorID;
 	}
 
 	public String getFirstName() {

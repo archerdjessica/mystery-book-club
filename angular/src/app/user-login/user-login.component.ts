@@ -10,11 +10,6 @@ export class UserLoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
   }
 
-}
-export class UserLogin{
-  email:string;
-  password:number
 }
