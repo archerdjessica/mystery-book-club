@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
@@ -20,7 +20,7 @@ import { AdminApproveReviewComponent } from './admin-approve-review/admin-approv
 import { AdminEditReviewComponent } from './admin-edit-review/admin-edit-review.component';
 import { AdminDeleteReviewComponent } from './admin-delete-review/admin-delete-review.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+// import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'login', component: UserLoginComponent },
@@ -61,9 +61,9 @@ const routes: Routes = [
     AdminDeleteReviewComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule
+    // BrowserModule,
+    // FormsModule,
+    // HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot(routes)
 
