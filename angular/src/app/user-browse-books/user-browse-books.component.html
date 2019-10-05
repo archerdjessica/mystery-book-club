@@ -1,1 +1,19 @@
-<p>user-browse-books works!</p>
+<div>
+    <div>
+        <table border='1px'>
+            <tr>
+                <th>Title</th>
+                <th>Publisher</th>
+                <th>Authors</th>
+                <th>Reviews</th>
+            </tr>
+            <tr *ngFor="let book of books">
+                <td> {{book.title}}</td>
+                <td> {{book.publisher.pubName}}</td>
+                <td *ngFor="let author of book.authors">
+                    {{author.firstName}}&nbsp; {{author.lastName}}</td>
+                <td *ngFor="let review of reviews">{{review.reviewBody}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

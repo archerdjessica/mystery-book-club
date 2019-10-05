@@ -18,6 +18,7 @@ export class BookDataService {
    }
 
    public getAllBooks():Observable<Book[]>{
+     console.log("Should have a book");
      return this.http.get<Book[]>(this.getBooksUrl);
    }
 

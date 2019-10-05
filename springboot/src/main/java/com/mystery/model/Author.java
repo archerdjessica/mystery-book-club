@@ -22,12 +22,12 @@ public class Author {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getAuthorID() {
+	public int getAuthorId() {
 		return authorId;
 	}
 
-	public void setAuthorID(int authorID) {
-		this.authorId = authorID;
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
 	}
 
 	public String getFirstName() {
