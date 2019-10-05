@@ -30,7 +30,7 @@ export class BookReviewService {
     return this.http.put<Review>(this.editURL, review);
   }
 
-  public deleteAnimal(id: number) {
+  public deleteReview(id: number) {
     return this.http.delete<Review>(this.deleteURL + id);
   }
 }

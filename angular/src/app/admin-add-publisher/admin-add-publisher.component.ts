@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Publisher} from '../publisher'; 
-import {PublisherService} from '../publisher.service'
+import { Publisher } from '../publisher';
+import { PublisherDataService } from '../publisher-data.service';
 
 @Component({
   selector: 'app-admin-add-publisher',
@@ -8,14 +8,23 @@ import {PublisherService} from '../publisher.service'
   styleUrls: ['./admin-add-publisher.component.css']
 })
 export class AdminAddPublisherComponent implements OnInit {
+
   publisher: Publisher;
-  constructor(private  publisherservice:PublisherService ) { 
+  constructor(private publisherService: PublisherDataService) {
     this.publisher = new Publisher();
   }
+
   ngOnInit() {
+    document.getElementById("message").hidden = true;
   }
-  createPublisher(){
-    this.publisherservice.createPublisher(this.publisher);
+  public addPublisher() {
+    this.publisherService.addPublisher(this.publisher).subscribe(data => this.publisher);
+    console.log(this.publisher.pubName);
+    document.getElementById("message").hidden = false;
+    document.getElementById("message").innerText += this.publisher.pubName;
   }
+//   createPublisher(){
+//     this.publisherservice.createPublisher(this.publisher);
+//   }
 
 }
