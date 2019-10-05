@@ -32,20 +32,20 @@
 <div>
     <div class="container" id="editInfoForm">
         <h1>Edit Info</h1>
-        <form>
+        <form (ngSubmit)="updateUser()" #userForm="ngForm">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="{{dummyUser.name}}">
+                <input type="text" class="form-control" [(ngModel)]="user.name" neme="name" id="name" placeholder="{{dummyUser.name}}">
             </div>
 
             <div class="form-group">
                 <label for="email">email</label>
-                <input type="email" class="form-control" id="email" placeholder="{{dummyUser.email}}">
+                <input type="email" class="form-control" [(ngModel)]="user.email" name="email" id="email" placeholder="{{dummyUser.email}}">
             </div>
 
             <div class="form-group">
                 <label for="birthday">birthday</label>
-                <input type="date" class="form-control" id="birthday" placeholder="{{dummyUser.birthday}}">
+                <input type="date" class="form-control" [(ngModel)]="user.birthday" name="birthday" id="birthday" placeholder="{{dummyUser.birthday}}">
             </div>
 
             <button type="submit" class="btn btn-success">Submit</button>
