@@ -23,4 +23,8 @@ export class AdminAddPublisherComponent implements OnInit {
     document.getElementById("message").hidden = false;
     document.getElementById("message").innerText += this.publisher.pubName;
   }
+//   createPublisher(){
+//     this.publisherservice.createPublisher(this.publisher);
+//   }
+
 }

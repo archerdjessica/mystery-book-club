@@ -1,1 +1,30 @@
-<p>user-register works!</p>
+<div>
+  <div class="container" id="registration">
+      <h1>Registration</h1>
+      <form (ngSubmit)="createUser()" #userForm="ngForm">
+          <div class="form-group">
+              <label for="userEmail">Enter Email</label>
+              <input required type="text" class="form-control" [(ngModel)]="user.email" name="email" id="email" placeholder="{{dummyUser.email}}">
+              <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required</div>
+          </div>
+
+          <div class="form-group">
+            <label for="fullName">Enter full name</label>
+            <input required type="text" class="form-control" name="name" [(ngModel)]="user.name" id="name" placeholder="{{dummyUser.fullName}}">
+            <div class="alert alert-danger" *ngIf="name.touched && !name.valid">Full name is required</div>
+          </div>
+          <div class="form-group">
+            <label for="password">Create Password</label>
+            <input required type="password" class="form-control" name="password" [(ngModel)]="user.password" id="password" placeholder="{{dummyUser.password}}">
+          <div class="alert alert-danger" *ngIf="password.touched && !password.valid">Password is required</div>
+         </div>
+
+          <div class="form-group">
+              <label for="birthDate">Enter Birthdate</label>
+              <input required type="Date" class="form-control" name="birthday" [(ngModel)]="user.birthday" id="birthday" placeholder="{{dummyUser.dob}}">
+              <div class="alert alert-danger" *ngIf="birthday.touched && !birthday.valid">Birthday is required</div>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+  </div>
+</div>

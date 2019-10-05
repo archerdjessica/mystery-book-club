@@ -2,7 +2,6 @@ import { Component, OnInit} from '@angular/core';
 import { User } from '../user';
 import { Observable } from 'rxjs';
 
-
 @Component({
   selector: 'app-admin-search-users',
   templateUrl: './admin-search-users.component.html',
@@ -42,4 +41,3 @@ export class AdminSearchUsersComponent implements OnInit {
   }
 
 }
-
