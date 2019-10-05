@@ -1,0 +1,25 @@
+<div>
+    <table>
+        <tr>
+            <th id="th">Id</th>
+            <th id="th">Name</th>
+            <th id="th">Age</th>
+            <th id="th">Category</th>
+
+        </tr>
+        <tr *ngFor="let animal of animals">
+            <td>{{animal.id}}</td>
+            <td>{{animal.name}}</td>
+            <td>{{animal.age}}</td>
+            <td>{{animal.category}}</td>
+            <td><button (click)="deleteAnimal(animal)" id="delete">Delete</button></td>
+            <td>
+                <input type="text" [(ngModel)]="animal.name" size="5"/>
+                <input type="number" [(ngModel)]="animal.age" width="5"/>
+                <input type="text" [(ngModel)]="animal.category" size="5"/>
+            </td>
+            <td><button (click)=update(animal) id="update">Update in database</button></td>
+        </tr>
+    </table>
+
+</div>
