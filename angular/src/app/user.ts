@@ -6,6 +6,8 @@ export class User {
     email: string;
     password: string;
     name: string;
-    birthday: Date;
-    readingList: Book[];
+    // birthday: Date;
+    birthday:string;
+    // readingList: Book[];
+    readingList: string[];
 }
