@@ -9,4 +9,5 @@ public interface UserService {
 	public Boolean isValidUser(User user);
 	public User updateUserInfo(User user);
 	public List<User> getAllUsers();
+	public User registerUser(User user);
 }

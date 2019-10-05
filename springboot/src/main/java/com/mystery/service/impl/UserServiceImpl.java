@@ -17,8 +17,13 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Boolean isValidUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		Boolean b = false;
+		User dbUser = dao.getOne(user.getId());
+		if(dbUser != null) {
+			if(user.getPassword().equals(dbUser.getPassword()))
+				b = true;
+		}
+		return b;
 	}
 
 	@Override
@@ -31,5 +36,11 @@ public class UserServiceImpl implements UserService {
 	public List<User> getAllUsers() {
 		// TODO Auto-generated method stub
 		return dao.findAll();
+	}
+
+	@Override
+	public User registerUser(User user) {
+		// TODO Auto-generated method stub
+		return dao.save(user);
 	}
 }
