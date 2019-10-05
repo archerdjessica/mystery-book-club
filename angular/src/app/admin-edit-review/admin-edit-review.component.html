@@ -3,8 +3,7 @@
         <tr>
             <th>Reivew</th>
         </tr>
-        <tr>
-            <!-- *ngFor="let review of reviews">-->
+        <tr *ngFor="let review of reviews">
             <td>{{review.reviewBody}}</td>
         </tr>
     </table>
