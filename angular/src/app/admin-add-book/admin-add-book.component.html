@@ -1,4 +1,39 @@
-<h2> Administrator Add Book To List</h2>
-<div><br>
-    <a routerLink="/addbook">Add Book</a>
+<h3> Administrator Add Book To Database</h3>
+<div>
+    <form (ngSubmit)="addBook()" #bookForm="ngForm">
+
+        Enter Title: <input type="text" name="title" placeholder="Enter Title" [(ngModel)]="book.title" /><br />
+        Enter ISBN: <input type="number" name="isbn" placeholder="Enter ISBN" [(ngModel)]="book.isbn" /><br />
+        Select Publisher:
+        <select [(ngModel)]="selectedPublisher" name="publisher">
+            <option *ngFor="let publisher of publishers" [ngValue]="publisher">
+                {{publisher.pubName}}
+            </option>
+        </select><br />
+        Enter number of Authors:
+        <select [(ngModel)]="num" [ngModelOptions]="{standalone: true}" (change)="authorFunction()">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <div id="author_1">
+            Enter Author's name<br />
+            <input type="text" name="author1_fname" placeholder="Enter First Name"
+                [(ngModel)]="author1.firstName" /><br />
+            <input type="text" name="author1_lname" placeholder="Enter Last Name" [(ngModel)]="author1.lastName" />
+        </div>
+        <div id="author_2" hidden=true>
+            Enter Second Author's name<br />
+            <input type="text" name="author2_fname" placeholder="Enter First Name"
+                [(ngModel)]="author2.firstName" /><br />
+            <input type="text" name="author2_lname" placeholder="Enter Last Name" [(ngModel)]="author2.lastName" />
+        </div>
+        <div id="author_3" hidden=true>
+            Enter Last Author's name<br />
+            <input type="text" name="author3_fname" placeholder="Enter First Name"
+                [(ngModel)]="author3.firstName" /><br />
+            <input type="text" name="author3_lname" placeholder="Enter Last Name" [(ngModel)]="author3.lastName" />
+        </div>
+        <br /><input type="submit" value="Submit" />
+    </form>
 </div>

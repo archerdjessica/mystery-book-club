@@ -19,7 +19,7 @@ export class AuthorDataService {
     return this.http.get<Author[]>(this.getAuthorListUrl);
   }
 
-  public saveReview(author: Author) {
+  public addAuthor(author: Author) {
     return this.http.post<Author>(this.addAuthorUrl, author);
   }
 }
