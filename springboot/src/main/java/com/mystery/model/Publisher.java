@@ -13,11 +13,12 @@ public class Publisher {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int pubId;
+	
 	@NotNull
 	private String pubName;
 	
 	@NotNull
-	private Long contact;
+	private long contact;
 	
 	public Publisher() {
 		// TODO Auto-generated constructor stub
@@ -31,21 +32,21 @@ public class Publisher {
 		this.pubId = pubId;
 	}
 
-	public String getName() {
+	public String getPubName() {
 		return pubName;
 	}
 
-	public void setName(String name) {
-		this.pubName = name;
+	public void setPubName(String pubName) {
+		this.pubName = pubName;
 	}
 
-	public Long getContact() {
+	public long getContact() {
 		return contact;
 	}
 
-	public void setContact(Long contact) {
+	public void setContact(long contact) {
 		this.contact = contact;
 	}
-	
+
 	
 }

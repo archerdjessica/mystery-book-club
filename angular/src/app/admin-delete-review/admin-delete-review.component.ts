@@ -16,8 +16,7 @@ export class AdminDeleteReviewComponent {
   }
 
   deleteReview() {
-    this.reviewService.deleteAnimal(this.review.reviewId).subscribe(data => {
-    })
+    this.reviewService.deleteReview(this.review.reviewId).subscribe(data => this.goToReviewList())
   }
 
   goToReviewList() {

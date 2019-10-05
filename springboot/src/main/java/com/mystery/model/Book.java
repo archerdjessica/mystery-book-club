@@ -20,7 +20,7 @@ public class Book {
 	private int bookId;
 	
 	@NotNull
-	@Pattern(regexp= "[0-9]{10,13}$")
+	//@Pattern(regexp= "[0-9]{10,13}$")
 	private long isbn;
 	
 	@OneToOne
