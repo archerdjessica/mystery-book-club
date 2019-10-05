@@ -1,0 +1,12 @@
+<div>
+    <table border='1px'>
+        <tr>
+            <th colspan="2">Reivew</th>
+        </tr>
+        <tr *ngFor="let review of reviews">
+            <td>{{review.reviewBody}}</td>
+            <td><input type="checkbox" value="{{review.reviewID}}" (click)="deleteReview()" /></td>
+        </tr>
+    </table>
+
+</div>
