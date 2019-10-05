@@ -23,5 +23,4 @@ export class AdminEditUserComponent implements OnInit {
     console.log("user update: "+user);
   }
 
-
 }

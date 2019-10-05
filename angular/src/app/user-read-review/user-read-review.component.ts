@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import {GetBooksService} from '../getbooks.service';
+import {Router} from '@angular/router';
+import { runInThisContext } from 'vm';
 import { User } from '../user';
 import { Review } from '../review';
 import { Book } from '../book';
 import { Author } from '../author';
 import { Publisher } from '../publisher';
-import { BookReviewService } from '../book-review.service';
+import { BookReviewService } from '../book-review.service'
 
 @Component({
   selector: 'app-user-read-review',
@@ -12,13 +15,14 @@ import { BookReviewService } from '../book-review.service';
   styleUrls: ['./user-read-review.component.css']
 })
 export class UserReadReviewComponent implements OnInit {
-
+ //  bookId:number;
   user: User;
   book: Book;
   review: Review;
   author: Author;
   publisher: Publisher;
   reviews:Review[];
+  
   constructor(private reviewService:BookReviewService) {
     this.user = new User();
     this.author = new Author();
@@ -26,6 +30,7 @@ export class UserReadReviewComponent implements OnInit {
     this.book = new Book();
     this.review = new Review();
   }
+
 
   ngOnInit() {
     this.reviewService.readReviews().subscribe(data=>{
@@ -53,5 +58,9 @@ export class UserReadReviewComponent implements OnInit {
     this.review.reviewBody = "This is a sample of the review body which can be manipulated by the Admin";
     this.review.user = this.user;
   }
+   public getReviews(){
+     this.GetBooksService.getReviews(this.bookId).subscribe(data=>{this.review = data;})
+
+   }
 
 }
