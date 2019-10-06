@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AnimalService {
+  private baseUrl:string;
   private createUrl: string;
   private getAnimalsUrl: string;
   private getByIdUrl: string;
@@ -15,11 +16,12 @@ export class AnimalService {
   private updateUrl: string;
 
   constructor(private http: HttpClient, private router:Router) {
-    this.createUrl = "http://localhost:8400/createAnimal";
-    this.getAnimalsUrl = "http://localhost:8400/animals";
-    this.getByIdUrl = "http://localhost:8400/animal/";
-    this.deleteUrl = "http://localhost:8400/animal/";
-    this.updateUrl = "http://localhost:8400/updateAnimal";
+    this.baseUrl="http://3.15.222.76:5100";
+    this.createUrl = this.baseUrl+"/createAnimal";
+    this.getAnimalsUrl = this.baseUrl+"/animals";
+    this.getByIdUrl = this.baseUrl+"/animal/";
+    this.deleteUrl = this.baseUrl+"/animal/";
+    this.updateUrl = this.baseUrl+"/updateAnimal";
   }
 
   public getAllAnimals(): Observable<Animal[]> {
