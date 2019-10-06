@@ -24,7 +24,7 @@ public class AuthorController {
 		// TODO Auto-generated method stub
 		return service.getAuthors();
 	}
-
+	
 	@PostMapping("/addAuthor")
 	public Author addAuthor(@RequestBody Author author) {
 		// TODO Auto-generated method stub

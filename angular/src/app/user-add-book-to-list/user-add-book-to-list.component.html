@@ -1,87 +1,19 @@
 <div>
-    <h2> Enter Book Information:</h2>
-    <form (ngSubmit)=addBook() bookForm="ngForm">
-        Enter Title: <input type="text" name="title" placeholder="Enter Title" [(ngModel)]="book.title" /><br />
-        Enter ISBN: <input type="number" name="isbn" placeholder="Enter ISBN" [(ngModel)]="book.isbn" /><br />
-        Enter Publisher Id: <input type="number" name="pubId" placeholder="Enter Publisher Id"
-            [(ngModel)]="book.publisher.pubId" /><br />
-        <label>Enter Publisher Name</label>
-        <input type="text" name="name" placeholder="Enter Publisher Name" [(ngModel)]="book.publisher.pubName" /><br />
-        <label>Enter Publisher Contact</label>
-        <input type="number" name="contact" placeholder="Enter Publisher Contact Number"
-            [(ngModel)]="book.publisher.contact" />
-        <input type="submit" value="Add Book" />
-
-        <h2> Enter Author(s):</h2>
-        <label>One to Three Authors</label>
-        <select id="authors" onchange="Authorfunction()">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select><br />
-        &nbsp;&nbsp; <label>Enter First Name</label>
-        &nbsp;&nbsp;<input id="author[0]" type="text" name="book.authors[0].firstName" placeholder="Enter Author Name"
-            [(ngModel)]="book.authors[0].firstName" />
-        &nbsp;&nbsp;<label>Enter Last Name</label>
-        &nbsp;&nbsp;<input type="text" name="book.authors[0].lastName" [(ngModel)]="book.authors[0].lastName" /> <br />
-        &nbsp;&nbsp;&nbsp;<label id="label21" style="display: none;">Enter First Name</label>
-        &nbsp;&nbsp;<input id="author21" type="text" name="book.authors[1].firstName" placeholder=""
-            style="display: none;" [(ngModel)]="book.authors[1].firstName" />
-        &nbsp;&nbsp;<label id="label22" style="display: none;">Enter Last Name</label>
-        &nbsp;&nbsp;<input type="text" id="author22" style="display: none;" name="book.authors[1].lastName"
-            [(ngModel)]="book.authors[1].lastName" /> <br />
-        &nbsp;&nbsp;&nbsp;<label id="label31" style="display: none;">Enter First Name</label>
-        &nbsp;&nbsp;<input id="author31" type="text" name="book.authors[2].firstName" placeholder=""
-            style="display: none;" [(ngModel)]="book.authors[2].firstName" />
-        &nbsp;&nbsp;<label id="label32" style="display: none;">Enter Last Name</label>
-        &nbsp;&nbsp;<input type="text" style="display: none;" id="author32" name="book.authors[2].lastName"
-            [(ngModel)]="book.authors[2].lastName" /> <br />
-
-        <!-- "scripts": ["./myscript.js"] added to angular.json-->
-        <!-- myscript.js add to folder root folder (book of month)-->
-    </form>
+    <h1>List of Books</h1>
+    <table border='1px'>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Reivews</th>
+        </tr>
+        <tr *ngFor="let book of books">
+            <td>{{book.title}}</td>
+            <td *ngFor="let author of book.authors">{{author.firstName}} {{author.lastName}} </td>
+            <td>{{book.publisher.pubName}}</td>
+            <td>
+                <app-user-read-review></app-user-read-review>
+            </td>
+        </tr>
+    </table>
 </div>
-<script>
-    function Authorfunction() {
-
-        let num = document.getElementById("authors").value;
-        switch (num) {
-            case '1':
-                document.getElementById("author21").style.display = "none";
-                document.getElementById("author22").style.display = "none";
-                document.getElementById("label21").style.display = "none";
-                document.getElementById("label22").style.display = "none";
-                document.getElementById("author31").style.display = "none";
-                document.getElementById("author32").style.display = "none";
-                document.getElementById("label31").style.display = "none";
-                document.getElementById("label32").style.display = "none";
-                break;
-            case '2':
-                document.getElementById("author21").style.display = "inline";
-                document.getElementById("author22").style.display = "inline";
-                document.getElementById("label21").style.display = "inline";
-                document.getElementById("label22").style.display = "inline";
-
-                document.getElementById("author31").style.display = "none";
-                document.getElementById("author32").style.display = "none";
-                document.getElementById("label31").style.display = "none";
-                document.getElementById("label32").style.display = "none";
-                break;
-            case '3':
-                document.getElementById("author21").style.display = "inline";
-                document.getElementById("author22").style.display = "inline";
-                document.getElementById("label21").style.display = "inline";
-                document.getElementById("label22").style.display = "inline";
-
-                document.getElementById("author31").style.display = "inline";
-                document.getElementById("author32").style.display = "inline";
-                document.getElementById("label31").style.display = "inline";
-                document.getElementById("label32").style.display = "inline";
-                break;
-            default:
-                break;
-        }
-
-    }
-
-</script>

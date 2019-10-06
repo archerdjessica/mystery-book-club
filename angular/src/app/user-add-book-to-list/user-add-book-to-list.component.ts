@@ -9,13 +9,12 @@ import { Book } from '../book';
 })
 export class UserAddBookToListComponent {
 
-  book:Book;
+  books:Book[];
   constructor(private bookService:BookDataService) { 
-    this.book = new Book();
   }
 
-  // public getBooks(){
-  //   return this
-  // }
+  ngOnInit(){
+    this.bookService.getAllBooks().subscribe(data=>{this.books = data});
+  }
 
 }
