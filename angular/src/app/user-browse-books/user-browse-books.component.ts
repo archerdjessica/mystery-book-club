@@ -12,12 +12,12 @@ import { BookReviewService } from '../book-review.service';
 export class UserBrowseBooksComponent implements OnInit {
 
   books: Book[];
-  reviews: Review[];
-  constructor(private bookService: BookDataService, private reviewService: BookReviewService) { }
+  //reviews: Review[];
+  constructor(private bookService: BookDataService){}//, private reviewService: BookReviewService) { }
 
   ngOnInit() {
     this.bookService.getAllBooks().subscribe(bookData => { this.books = bookData });
-    this.reviewService.readReviews().subscribe(reviewData => { this.reviews = reviewData });
+    //this.reviewService.readReviews().subscribe(reviewData => { this.reviews = reviewData });
   }
 
 }

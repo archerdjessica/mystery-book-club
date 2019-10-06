@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {GetBooksService} from '../getbooks.service';
-import {Router} from '@angular/router';
-import { runInThisContext } from 'vm';
-import { User } from '../user';
 import { Review } from '../review';
 import { Book } from '../book';
 import { Author } from '../author';
@@ -67,9 +63,6 @@ export class UserReadReviewComponent implements OnInit {
     // this.review.reviewBody = "This is a sample of the review body which can be manipulated by the Admin";
     // this.review.user = this.user;
   }
-   public getReviews(){
-     this.GetBooksService.getReviews(this.bookId).subscribe(data=>{this.review = data;})
-
-   }
+   
 
 }

@@ -46,8 +46,8 @@ public class ReviewController {
 		service.deleteReview(id);
 	}
 
-	@GetMapping("/")
-	public String Hello() {
-		return "Hello!";
-	}
+//	@GetMapping("/")
+//	public String Hello() {
+//		return "Hello!";
+//	}
 }
