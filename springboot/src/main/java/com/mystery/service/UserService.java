@@ -7,7 +7,7 @@ import com.mystery.model.User;
 public interface UserService {
 
 	public Boolean isValidUser(User user);
-	public User updateUserInfo(User user);
-	public List<User> getAllUsers();
 	public User registerUser(User user);
+	public User updateUser(User user);
+	public List<User> getAllUsers();
 }
