@@ -12,5 +12,4 @@ public interface UserService {
 	public User getUserByEmail(User user);
 	public User registerUser(User user);
 	public User updateUser(User user);
-	public List<User> getAllUsers();
 }

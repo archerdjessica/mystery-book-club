@@ -26,7 +26,7 @@ public class UserController {
     
     @PostMapping("/userValid")
     public boolean isValidUser(@RequestBody User user) {
-    	return service.isValidUser(user);   	
+    	return service.isValidUser(user) != null;	
     	//return true;
     }
      
