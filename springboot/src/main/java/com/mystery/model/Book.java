@@ -38,6 +38,14 @@ public class Book {
 		// TODO Auto-generated constructor stub
 	}
 
+	public int getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(int bookId) {
+		this.bookId = bookId;
+	}
+
 	public long getIsbn() {
 		return isbn;
 	}

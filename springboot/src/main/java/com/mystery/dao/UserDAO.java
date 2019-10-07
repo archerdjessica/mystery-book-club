@@ -10,6 +10,6 @@ import com.mystery.model.User;
 @Repository
 public interface UserDAO extends JpaRepository<User, Integer> {
 
-	@Query(value="select u from Account u where u.email = :email", nativeQuery = true)
+	@Query(value="select * from Account u where u.email = :email", nativeQuery = true)
 	public User findUserByEmail(@Param("email") String email);
 }

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mystery.model.Review;
 import com.mystery.service.ReviewService;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class ReviewController {
 
@@ -25,6 +25,7 @@ public class ReviewController {
 	@PostMapping("/writeReview")
 	public Review saveReview(@RequestBody Review review) {
 		// TODO Auto-generated method stub
+		System.out.println(review.getReviewBody());
 		return service.saveReview(review);
 	}
 
@@ -46,6 +47,10 @@ public class ReviewController {
 		service.deleteReview(id);
 	}
 
+//	@GetMapping("/review/{bookId}")
+//	public List<Review> getReviewsByBookId(@PathVariable int bookId) {
+//		return service.getReviewByBookId(bookId);
+//	}
 //	@GetMapping("/")
 //	public String Hello() {
 //		return "Hello!";

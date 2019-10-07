@@ -54,12 +54,12 @@ public class Review {
 		this.book = book;
 	}
 
-	public String getReview() {
+	public String getReviewBody() {
 		return reviewBody;
 	}
 
-	public void setReview(String review) {
-		this.reviewBody = review;
+	public void setReviewBody(String reviewBody) {
+		this.reviewBody = reviewBody;
 	}
 
 	public Date getDateWritten() {

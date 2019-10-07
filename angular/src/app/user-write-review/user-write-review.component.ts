@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Review } from '../review';
 import { BookReviewService } from '../book-review.service';
 import { Router } from '@angular/router';
@@ -13,25 +13,33 @@ import { User } from '../user';
 export class UserWriteReviewComponent implements OnInit {
 
   review: Review;
+  user: User;
+  book: Book;
   constructor(private reviewService: BookReviewService, private router: Router) {
     this.review = new Review();
+    this.book = new Book();
+    this.user = new User();
+    this.book.bookId = 3;
+    this.user.id = 5;
+    this.user.name = "Sam Ybarra";
     this.review.reviewBody = "Enter your Review here...";
   }
 
-  ngOnInit(){
+  ngOnInit() {
     document.getElementsByName("review")[0].innerText = this.review.reviewBody;
   }
 
-  saveReview(user: User, book: Book) {
+  saveReview() {
     this.review.dateWritten = new Date();
-    this.review.book = book;
-    this.review.user = user;
-    // console.log(this.review.reviewBody);
-    this.reviewService.saveReview(this.review).subscribe(data => this.review);
-    this.goToReviewList();
+    this.review.book = this.book;
+    this.review.user = this.user;
+    console.log(this.review.reviewBody);
+    console.log(this.review.book.bookId);
+    this.reviewService.saveReview(this.review).subscribe(data => this.goToReviewList());
+    
   }
 
   goToReviewList() {
-    this.router.navigate(['/review']);
+    this.router.navigate(['/browseBooks']);
   }
 }

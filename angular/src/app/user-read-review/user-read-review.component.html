@@ -1,1 +1,6 @@
-<td *ngFor="let review of reviews">{{review.reviewBody}}</td>
+<div *ngFor="let review of reviews">
+    <div *ngIf="review.book.title == book.title">
+        <p>User: {{review.user.name}}</p>
+        <p>{{review.reviewBody}}</p>
+    </div>
+</div>

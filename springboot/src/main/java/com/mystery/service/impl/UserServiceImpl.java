@@ -16,14 +16,13 @@ public class UserServiceImpl implements UserService {
 	UserDAO dao;
 
 	@Override
-	public Boolean isValidUser(User user) {
-		Boolean b = false;
+	public User isValidUser(User user) {
 		User dbUser = dao.findUserByEmail(user.getEmail());
-		if(dbUser != null) {
-			if(user.getPassword().equals(dbUser.getPassword()))
-				b = true;
+		if (dbUser != null) {
+			if (user.getPassword().equals(dbUser.getPassword()))
+				return user;
 		}
-		return b;
+		return dbUser;
 	}
 
 	@Override

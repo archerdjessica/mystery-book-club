@@ -7,23 +7,35 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  private createUrl:string;
-  private getUsersUrl:string;
-  private updateUrl:string;
-  constructor(private http:HttpClient) { 
-    this.createUrl ="http://localhost:2000/createUser";
-    this.getUsersUrl="http://localhost:2000/users";
-    this.updateUrl ="http://localhost:2000/updateUser";
-  } 
+  private createUrl: string;
+  private getUsersUrl: string;
+  private updateUrl: string;
+  private startSessionUrl: string;
+  private endSessionURL: string;
+  constructor(private http: HttpClient) {
+    this.createUrl = "http://localhost:4000/registerUser";
+    this.getUsersUrl = "http://localhost:4000/users";
+    this.updateUrl = "http://localhost:4000/updateUser";
+    this.startSessionUrl = "http://localhost:4000/isValidUser";
+    this.endSessionURL = "http://localhost:4000/destory";
+  }
 
-  public getAllUsers():Observable<User[]>{
+  public getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.getUsersUrl);
   }
 
-  public createUser(user:User){
+  public createUser(user: User) {
     return this.http.post<User>(this.createUrl, user);
   }
-  public updateUser(user:User){
+
+  public updateUser(user: User) {
     return this.http.put<User>(this.updateUrl, user);
+  }
+
+  public logIn(user: User){
+    return this.http.post<User>(this.startSessionUrl, user);
+  }
+  public logOut(user: User) {
+    this.http.post<User>(this.endSessionURL, user);
   }
 }
