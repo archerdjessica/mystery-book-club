@@ -18,13 +18,13 @@ public class AuthorController {
 
 	@Autowired
 	AuthorService service;
-	
+
 	@GetMapping("/authors")
 	public List<Author> getAuthors() {
 		// TODO Auto-generated method stub
 		return service.getAuthors();
 	}
-	
+
 	@PostMapping("/addAuthor")
 	public Author addAuthor(@RequestBody Author author) {
 		// TODO Auto-generated method stub

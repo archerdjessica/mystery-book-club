@@ -11,4 +11,6 @@ public interface UserService {
 	public List<User> getAllUsers();
 	public User getUserByEmail(User user);
 	public User registerUser(User user);
+	public User updateUser(User user);
+	public List<User> getAllUsers();
 }

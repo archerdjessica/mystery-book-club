@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User updateUserInfo(User user) {
 		// TODO Auto-generated method stub
-		return dao.save(user);
+		return null;
 	}
 
 	@Override
@@ -47,5 +47,11 @@ public class UserServiceImpl implements UserService {
 	public User getUserByEmail(User user) {
 		// TODO Auto-generated method stub
 		return dao.findUserByEmail(user.getEmail());
+	}
+
+@Override
+	public User updateUser(User user) {
+		// TODO Auto-generated method stub
+		return dao.save(user);
 	}
 }
