@@ -53,6 +53,6 @@ public class UserController {
 	@PostMapping("/destroy")
 	public String destroySession(HttpServletRequest request) {
 		request.getSession().invalidate();
-		return "/home";
+		return "";
 	}
 }

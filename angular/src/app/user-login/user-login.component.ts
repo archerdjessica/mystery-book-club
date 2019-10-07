@@ -15,7 +15,10 @@ export class UserLoginComponent {
   }
 
   public userLogin() {
-    this.userService.logIn(this.user).subscribe(data => { this.user = data });
+    this.userService.logIn(this.user).subscribe(data => {
+      if (data == null) { console.log("null") }
+      else { this.user = data; }
+    });
     console.log(this.user);
   }
 }

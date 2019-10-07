@@ -36,6 +36,6 @@ export class UserService {
     return this.http.post<User>(this.startSessionUrl, user);
   }
   public logOut(user: User) {
-    this.http.post<User>(this.endSessionURL, user);
+    return this.http.post<User>(this.endSessionURL, user);
   }
 }
