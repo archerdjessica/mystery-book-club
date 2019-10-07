@@ -7,17 +7,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
+  private baseUrl:string;
   private createUrl: string;
   private getUsersUrl: string;
   private updateUrl: string;
   private startSessionUrl: string;
   private endSessionURL: string;
   constructor(private http: HttpClient) {
-    this.createUrl = "http://localhost:4000/registerUser";
-    this.getUsersUrl = "http://localhost:4000/users";
-    this.updateUrl = "http://localhost:4000/updateUser";
-    this.startSessionUrl = "http://localhost:4000/isValidUser";
-    this.endSessionURL = "http://localhost:4000/destory";
+    this.baseUrl="http://3.15.222.76:5100";
+    this.createUrl = this.baseUrl+"/registerUser";
+    this.getUsersUrl = this.baseUrl+"/users";
+    this.updateUrl = this.baseUrl+"/updateUser";
+    this.startSessionUrl = this.baseUrl+"/isValidUser";
+    this.endSessionURL = this.baseUrl+"/destory";
   }
 
   public getAllUsers(): Observable<User[]> {

@@ -8,17 +8,19 @@ import { Book } from './book';
   providedIn: 'root'
 })
 export class BookReviewService {
+  private baseUrl:string;
   private readAllURL: string;
   private bookReviewsURL: string;
   private writeURL: string;
   private editURL: string;
   private deleteURL: string;
   constructor(private http: HttpClient) {
-    this.readAllURL = "http://localhost:4000/reviews";
-    this.writeURL = "http://localhost:4000/writeReview";
-    this.editURL = "http://localhost:4000/editReview";
-    this.deleteURL = "http://localhost:4000/deleteReview/";
-    this.bookReviewsURL = "http://localhost:4000/review/"
+    this.baseUrl = "http://3.15.222.76:5100";
+    this.readAllURL = this.baseUrl+"/reviews";
+    this.writeURL = this.baseUrl+"/writeReview";
+    this.editURL = this.baseUrl+"/editReview";
+    this.deleteURL = this.baseUrl+"/deleteReview/";
+    this.bookReviewsURL = this.baseUrl+"/review/"
   }
 
   public saveReview(review: Review) {

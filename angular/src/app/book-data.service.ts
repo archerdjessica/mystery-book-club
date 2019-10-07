@@ -7,14 +7,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BookDataService {
-
+baseUrl:string;
   getBooksUrl: string;
   getBookByIdUrl: string;
   addBookUrl: string;
   constructor(private http:HttpClient) {
-    this.getBooksUrl="http://localhost:4000/books";
-    this.getBookByIdUrl="http://localhost:4000/book/";
-    this.addBookUrl="http://localhost:4000/addBook";
+    this.baseUrl="http://3.15.222.76:5100";
+    this.getBooksUrl=this.baseUrl+"/books";
+    this.getBookByIdUrl=this.baseUrl+"/book/";
+    this.addBookUrl=this.baseUrl+"/addBook";
    }
 
    public getAllBooks():Observable<Book[]>{

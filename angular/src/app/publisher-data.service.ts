@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PublisherDataService {
-
+baseUrl:string;
   addPublisherUrl: string;
   getPublishersUrl: string;
   constructor(private http:HttpClient) { 
-    this.addPublisherUrl="http://localhost:4000/addPublisher";
-    this.getPublishersUrl="http://localhost:4000/publishers";
+    this.baseUrl="http://3.15.222.76:5100";
+    this.addPublisherUrl=this.baseUrl+"/addPublisher";
+    this.getPublishersUrl=this.baseUrl+"/publishers";
   }
 
   public addPublisher(publisher: Publisher){

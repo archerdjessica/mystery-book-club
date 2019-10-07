@@ -7,15 +7,16 @@ import { Author } from './author';
   providedIn: 'root'
 })
 export class AuthorDataService {
-
+  baseUrl: string;
   getAuthorListUrl: string;
   addAuthorUrl: string;
-  constructor(private http:HttpClient) { 
-    this.getAuthorListUrl = "http://localhost:4000/authors";
-    this.addAuthorUrl = "http://localhost:4000/addAuthor";
+  constructor(private http: HttpClient) {
+    this.baseUrl = "http://3.15.222.76:5100";
+    this.getAuthorListUrl = this.baseUrl + "/authors";
+    this.addAuthorUrl = this.baseUrl + "/addAuthor";
   }
 
-  public authorList():Observable<Author[]>{
+  public authorList(): Observable<Author[]> {
     return this.http.get<Author[]>(this.getAuthorListUrl);
   }
 
