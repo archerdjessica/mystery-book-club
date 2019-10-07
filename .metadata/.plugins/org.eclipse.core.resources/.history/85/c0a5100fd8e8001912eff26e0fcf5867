@@ -50,9 +50,8 @@ public class UserController {
 		return service.getAllUsers();
 	}
 
-	@PostMapping("/destroy")
-	public String destroySession(HttpServletRequest request) {
+	@GetMapping("/destroy")
+	public void destroySession(HttpServletRequest request) {
 		request.getSession().invalidate();
-		return "/home";
 	}
 }
