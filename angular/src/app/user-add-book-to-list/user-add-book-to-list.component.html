@@ -2,17 +2,21 @@
     <h1>List of Books</h1>
     <table border='1px'>
         <tr>
+            <th>Select</th>
             <th>Title</th>
             <th>Author</th>
             <th>Publisher</th>
             <th>Reivews</th>
         </tr>
         <tr *ngFor="let book of books">
+            <td><input type="checkbox" value="{{book.bookId}}" (click)="addToUserList(book.bookId)" /></td>
             <td>{{book.title}}</td>
-            <td *ngFor="let author of book.authors">{{author.firstName}} {{author.lastName}} </td>
+            <td>
+                <p *ngFor="let author of book.authors">{{author.firstName}} {{author.lastName}}</p>
+            </td>
             <td>{{book.publisher.pubName}}</td>
             <td>
-                <app-user-read-review></app-user-read-review>
+                <app-user-read-review [book]=book></app-user-read-review>
             </td>
         </tr>
     </table>

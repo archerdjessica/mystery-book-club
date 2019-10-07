@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mystery.dao.BookDAO;
 import com.mystery.dao.ReviewDAO;
 import com.mystery.model.Review;
 import com.mystery.service.ReviewService;
@@ -14,7 +15,10 @@ public class ReviewServiceImpl implements ReviewService {
 
 	@Autowired
 	ReviewDAO dao;
-
+	
+	@Autowired
+	BookDAO bookDao;
+	
 	@Override
 	public Review saveReview(Review review) {
 		// TODO Auto-generated method stub
@@ -38,5 +42,11 @@ public class ReviewServiceImpl implements ReviewService {
 		// TODO Auto-generated method stub
 		dao.deleteById(id);
 	}
+
+//	@Override
+//	public List<Review> getReviewByBookId(int bookId) {
+//		// TODO Auto-generated method stub
+//		return dao.getReviewsByBookId(bookId);
+//	}
 
 }
