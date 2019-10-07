@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.mystery</groupId>
 	<artifactId>spring_boot_demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>mystery-book-club</name>
 	<description>Project 2</description>
 
