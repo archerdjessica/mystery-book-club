@@ -10,9 +10,12 @@
             <tr *ngFor="let book of books">
                 <td> {{book.title}}</td>
                 <td> {{book.publisher.pubName}}</td>
-                <td *ngFor="let author of book.authors">
-                    {{author.firstName}}&nbsp; {{author.lastName}}</td>
-                <td *ngFor="let review of reviews">{{review.reviewBody}}</td>
+                <td>
+                    <p *ngFor="let author of book.authors">{{author.firstName}} {{author.lastName}}</p>
+                </td>
+                <td>
+                    <app-user-read-review [book]=book></app-user-read-review>
+                </td>
             </tr>
         </table>
     </div>
